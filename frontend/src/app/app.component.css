@@ -91,8 +91,9 @@ html {
 */
 .fluent-btn {
   background: var(--fluent-btn-bg) !important;
-  color: var(--fluent-btn-text) !important;
-  border: 2px solid var(--fluent-title);
+  color: #aaaaaa !important;
+  /* Negro en estado normal */
+  border: 2px solid var(--fluent-primary);
   border-radius: 17px;
   padding: 0.4em 0.5em;
   font-size: 2em;
@@ -101,7 +102,7 @@ html {
   box-shadow: var(--fluent-btn-shadow);
   cursor: pointer;
   outline: none;
-  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s, color 0.2s;
   letter-spacing: 0.2px;
   text-align: left;
   vertical-align: top;
@@ -111,12 +112,44 @@ html {
   max-width: 100%;
 }
 
+.fluent-btn .fluent-btn-title {
+  color: var(--fluent-btn-text) !important;
+  /* Negro en estado normal */
+  transition: color 0.2s;
+
+}
+
+.fluent-btn .fluent-btn-desc {
+  color: var(--fluent-sub) !important;
+  /* Negro en estado normal */
+  transition: color 0.2s;
+}
+
+.fluent-btn .fluent-icon {
+  filter: brightness(0) invert(0) !important;
+  /* Negro en estado normal */
+  transition: filter 0.2s;
+}
+
 .fluent-btn:hover,
 .fluent-btn:focus {
   background: var(--fluent-btn-bg-hover) !important;
-  color: var(--fluent-btn-text) !important;
+  color: #fff !important;
   box-shadow: 0 4px 16px 0 rgba(14, 165, 233, 0.18);
   transform: translateY(-2px) scale(1.04);
+}
+
+.fluent-btn:hover .fluent-btn-title,
+.fluent-btn:focus .fluent-btn-title,
+.fluent-btn:hover .fluent-btn-desc,
+.fluent-btn:focus .fluent-btn-desc {
+  color: #fff !important;
+}
+
+.fluent-btn:hover .fluent-icon,
+.fluent-btn:focus .fluent-icon {
+  filter: brightness(0) invert(1) !important;
+  /* Blanco en hover */
 }
 
 /*
@@ -216,7 +249,7 @@ html {
 */
 .hawkneo-message {
   margin-top: 12px;
-  width: 580px;
+  width: 480px;
   height: 48px;
   display: flex;
   align-items: center;
@@ -237,9 +270,8 @@ html {
 .settings-btn {
   width: 56px;
   height: 56px;
-  background: var(--fluent-btn-bg);
-  color: var(--fluent-btn-text);
-  border: none;
+  background: var(--fluent-primary);
+  border: 2px;
   border-radius: 50%;
   box-shadow: 0 4px 16px 0 rgba(14, 165, 233, 0.14);
   align-items: center;
@@ -253,7 +285,7 @@ html {
 
 .settings-btn:hover,
 .settings-btn:focus {
-  background: var(--fluent-btn-bg-hover);
+  background: var(--fluent-primary);
 }
 
 .settings-btn-alt {
@@ -302,8 +334,7 @@ html {
 .settings-btn {
   width: 55px;
   height: 55px;
-  background: var(--fluent-btn-bg);
-  color: var(--fluent-btn-text);
+  background: var(--fluent-primary);
   border: none;
   border-radius: 60%;
   box-shadow: 0 4px 16px 0 rgba(14, 165, 233, 0.14);
@@ -344,7 +375,7 @@ html {
 
 .settings-btn:hover,
 .settings-btn:focus {
-  background: var(--fluent-btn-bg-hover);
+  background: var(--fluent-complementary);
   box-shadow: 0 6px 18px 0 rgba(14, 165, 233, 0.22);
   transform: scale(1.08);
 }
