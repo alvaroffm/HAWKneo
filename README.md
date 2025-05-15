@@ -18,7 +18,7 @@ HAWKNeo permite gestionar diferentes flujos de datos de referencia a partir de u
 Este sistema está especialmente diseñado para la gestión y monitorización del ciclo de vida de datos de piezas de aeronaves, abarcando desde la recepción inicial de los datos, su validación y enriquecimiento, hasta la trazabilidad completa de componentes críticos en la industria aeronáutica. HAWKNeo facilita asegurar la calidad y la integridad de la información asociada a cada pieza, permitiendo un control exhaustivo y cumplimiento normativo en entornos industriales altamente regulados.
 
 
-![alt text](image-1.png)
+![alt text](readme_img.png)
 
 
 ## Estructura del Proyecto
