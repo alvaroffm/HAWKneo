@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="frontend/src/assets/logo.svg" alt="HAWKNeo Logo" width="180" />
+  <img src="frontend/src/assets/logo.svg" alt="HAWKNeo Logo" width="380" />
 </div>
 
 # HAWKNeo
