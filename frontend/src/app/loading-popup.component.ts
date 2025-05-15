@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'loading-popup',
+  standalone: true,
+  imports: [],
   template: `
     <div class="popup-backdrop">
       <div class="popup-content">

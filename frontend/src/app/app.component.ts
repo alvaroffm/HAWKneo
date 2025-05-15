@@ -5,13 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { LoadingPopupComponent } from './loading-popup.component';
 import { SuccessToastComponent } from './success-toast.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule, LoadingPopupComponent, SuccessToastComponent]
+  imports: [CommonModule, RouterModule, HttpClientModule]
 })
 export class AppComponent {
   public title = 'HAWKneo';
@@ -23,7 +24,7 @@ export class AppComponent {
   successMessage = '¡Operación completada con éxito!';
   toastTimeout: any = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   toggleSettingsMenu() {
     this.showSettingsMenu = !this.showSettingsMenu;
@@ -38,6 +39,9 @@ export class AppComponent {
         if (res.ok) {
           this.message = res.message;
           this.showToast(res.message, 'success');
+          setTimeout(() => {
+            this.router.navigate(['/hns']);
+          }, 800); // Espera breve para mostrar el toast
         } else {
           this.message = '';
           this.showToast(res.message, 'error');

@@ -1,0 +1,61 @@
+@import './home.component.css';
+
+/* Logo pequeño y a la esquina superior izquierda solo en HNS */
+.hns-card {
+  position: relative;
+}
+
+.hns-logo {
+  width: 100px;
+  height: auto;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-bottom: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.hns-title {
+  font-size: 3.1em;
+  font-weight: bold;
+  margin-bottom: 36px;
+  letter-spacing: 2px;
+  color: var(--fluent-primary);
+}
+
+.hns-actions {
+  display: flex;
+  gap: 32px;
+}
+
+.hns-btn-back {
+  margin-top: 48px;
+  background: #f3f3f3;
+  color: var(--fluent-primary);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+  transition: background 0.2s, color 0.2s, box-shadow 0.18s;
+  padding: 0;
+  cursor: pointer;
+}
+
+.hns-btn-back:hover {
+  background: #e7e7e7;
+  color: var(--fluent-primary-alt);
+  box-shadow: 0 4px 16px 0 rgba(14, 165, 233, 0.14);
+}
+
+.back-icon {
+  width: 28px;
+  height: 28px;
+  display: block;
+  margin: 0 auto;
+}

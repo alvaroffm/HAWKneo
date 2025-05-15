@@ -1,0 +1,41 @@
+<loading-popup *ngIf="showLoadingPopup" [message]="loadingMessage"></loading-popup>
+<success-toast [message]="successMessage" [visible]="showSuccessToast" [type]="toastType"></success-toast>
+
+<div class="hawkneo-main">
+  <div class="hawkneo-card hns-card">
+    <img src="hn_simple_logo.svg" alt="HAWKneo Logo" class="hawkneo-logo hns-logo" />
+    <h1 class="hns-title">HNS</h1>
+    <div class="hns-actions">
+      <button class="fluent-btn" (click)="getRDS()">
+        <div class="fluent-btn-content">
+          <img src="icons/ic_fluent_document_catch_up_20_regular.svg" class="fluent-icon" alt="RDS Icon" />
+          <div class="fluent-btn-title">Acción 1</div>
+          <div class="fluent-btn-desc">Ingesta de datos</div>
+        </div>
+      </button>
+      <button class="fluent-btn" (click)="getRDS()">
+        <div class="fluent-btn-content">
+          <img src="icons/ic_fluent_document_catch_up_20_regular.svg" class="fluent-icon" alt="RDS Icon" />
+          <div class="fluent-btn-title">Acción 2</div>
+          <div class="fluent-btn-desc">Ingesta de datos</div>
+        </div>
+      </button>
+    </div>
+    <button class="hns-btn hns-btn-back" (click)="goHome()" aria-label="Volver al inicio">
+      <img src="icons/ic_fluent_home_20_regular.svg" alt="Volver" class="back-icon" />
+    </button>
+  </div>
+</div>
+
+<div class="floating-btns">
+  <button class="settings-btn" aria-label="Settings">
+    <img src="icons/ic_fluent_settings_20_regular.svg" alt="Settings" class="settings-icon" />
+  </button>
+  <a class="settings-btn-alt github-btn" href="https://github.com/alvaroffm" target="_blank" rel="noopener"
+    aria-label="GitHub">
+    <img src="icons/github-mark-white.svg" alt="GitHub" class="settings-icon-alt" />
+  </a>
+  <a class="settings-btn-alt doc-btn" href="#" aria-label="Documentación">
+    <img src="icons/ic_fluent_notebook_20_regular.svg" alt="Documentación" class="settings-icon-alt" />
+  </a>
+</div>
