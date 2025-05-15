@@ -1,8 +1,7 @@
 <div align="center">
-  <img src="frontend/src/assets/logo.svg" alt="HAWKNeo Logo" width="180" />
+  <img src="frontend/src/assets/logo.svg" alt="HAWKNeo Logo" width="280" />
 </div>
 
-# HAWKNeo
 
 HAWKNeo es una aplicación web moderna que combina un frontend en Angular y un backend en FastAPI (Python) para la gestión, ingesta, enriquecimiento y validación de datos de referencia. El objetivo es ofrecer una plataforma visual y ágil para el seguimiento y la calidad de datos.
 
