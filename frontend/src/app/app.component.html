@@ -36,6 +36,12 @@
     <div class="hawkneo-message">
       {{ message }}
     </div>
+
+    <!-- Toast de éxito dentro de la tarjeta -->
+    <success-toast [visible]="showSuccessToast" [message]="successMessage" [type]="toastType"></success-toast>
+
+<!-- Popup de carga -->
+<loading-popup *ngIf="showLoadingPopup" [message]="loadingMessage"></loading-popup>
   </div>
 </div>
 

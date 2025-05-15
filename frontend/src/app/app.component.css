@@ -27,6 +27,7 @@ html {
 /* ===== Tarjeta principal ===== */
 /* Estilos para la tarjeta central (contenedor principal de la UI) */
 .hawkneo-card {
+  position: relative;
   background: var(--fluent-card-bg);
   border-radius: var(--fluent-radius);
   box-shadow: var(--fluent-shadow);
@@ -250,21 +251,23 @@ html {
 .hawkneo-message {
   margin-top: 12px;
   width: 480px;
-  height: 48px;
+  min-height: 50px;
   display: flex;
-  align-items: center;
-  justify-content: left;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-size: 1.1em;
   color: var(--fluent-message);
-  text-align: center;
+  text-align: justify;
   background: #f0f7fc;
   border-radius: 8px;
   box-shadow: 0 1px 4px 0 var(--fluent-btn-bg);
   transition: background 0.2s;
-  padding: 0 18px;
+  padding: 10px 18px 10px 18px;
   min-width: 0;
   min-height: 0;
   max-width: 100%;
+  max-height: 500%;
+  white-space: pre-line;
 }
 
 .settings-btn {

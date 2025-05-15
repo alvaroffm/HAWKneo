@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .logic import get_rds_message, get_rdr_message
+from fastapi.responses import JSONResponse
 
 app = FastAPI()
 
@@ -13,9 +14,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/rds")
-def rds():
-    return {"message": get_rds_message()}
+def get_rds():
+    ok, msg = get_rds_message()
+    return JSONResponse(content={"ok": ok, "message": msg})
+
 
 @app.get("/rdr")
 def rdr():

@@ -1,0 +1,45 @@
+.success-toast {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: #20b26c;
+  color: #fff;
+  padding: 16px 28px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  z-index: 2000;
+  font-size: 1.1em;
+  opacity: 0.98;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+.success-toast-error {
+  background: #d32f2f;
+  color: #fff;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 0.98;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 0.98;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.success-toast-message {
+  font-weight: 500;
+}
