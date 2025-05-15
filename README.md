@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="frontend/src/assets/logo.svg" alt="HAWKNeo Logo" width="280" />
+  <img src="frontend/src/assets/logo.svg" alt="HAWKNeo Logo" width="380" />
 </div>
 
-
-HAWKNeo es una aplicación web moderna que combina un frontend en Angular y un backend en FastAPI (Python) para la gestión, ingesta, enriquecimiento y validación de datos de referencia. El objetivo es ofrecer una plataforma visual y ágil para el seguimiento y la calidad de datos.
+# 
+HAWKNeo es una aplicación web moderna que combina un frontend en Angular y un backend en FastAPI (Python) para la ingesta, reporte y futuros procesos de datos de referencia. El objetivo es ofrecer una plataforma visual y ágil para el seguimiento y la calidad de datos.
 
 ## Tabla de Contenidos
 - [Descripción](#descripción)
@@ -11,11 +11,11 @@ HAWKNeo es una aplicación web moderna que combina un frontend en Angular y un b
 - [Instalación y Primeros Pasos](#instalación-y-primeros-pasos)
 - [Arranque Rápido](#arranque-rápido)
 - [Dependencias](#dependencias)
-- [Capturas de Pantalla](#capturas-de-pantalla)
 - [Licencia](#licencia)
 
 ## Descripción
-HAWKNeo permite visualizar y gestionar diferentes flujos de datos de referencia (RDS, RDR, RDG, RDQ), proporcionando una interfaz moderna y responsiva.
+HAWKNeo permite gestionar diferentes flujos de datos de referencia a partir de una serie de módulos (HNS, HNR, HNG, HNQ), proporcionando una interfaz adaptada a los tiempos que corren.
+Este sistema está especialmente diseñado para la gestión y monitorización del ciclo de vida de datos de piezas de aeronaves, abarcando desde la recepción inicial de los datos, su validación y enriquecimiento, hasta la trazabilidad completa de componentes críticos en la industria aeronáutica. HAWKNeo facilita asegurar la calidad y la integridad de la información asociada a cada pieza, permitiendo un control exhaustivo y cumplimiento normativo en entornos industriales altamente regulados.
 
 
 ![alt text](image.png)
@@ -28,7 +28,6 @@ HAWKNeo permite visualizar y gestionar diferentes flujos de datos de referencia 
 
 ## Instalación y Primeros Pasos
 ### Requisitos
-- Node.js 18+
 - Angular CLI (`npm install -g @angular/cli`)
 - Python 3.8+
 
@@ -70,7 +69,7 @@ npx ng serve HAWKneo --open
 ```
 
 ## Dependencias Principales
-- **Frontend:** Angular 19, Kendo UI, RxJS
+- **Frontend:** Angular 19
 - **Backend:** FastAPI, Uvicorn
 
 
