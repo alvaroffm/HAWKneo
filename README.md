@@ -74,4 +74,4 @@ npx ng serve HAWKneo --open
 
 
 ## Licencia
-[MIT](LICENSE)
+Licencia de que?
