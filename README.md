@@ -26,7 +26,7 @@ HAWKNeo facilita asegurar la calidad y la integridad de la información asociada
 - `scripts/`: Scripts para arrancar los servicios de frontend y backend
 
 
-![alt text](readme_img.png)
+![alt text](readme_image.png)
 
 
 
