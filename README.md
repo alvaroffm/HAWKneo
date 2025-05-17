@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="frontend/src/assets/hn_logo.svg" alt="HAWKNeo Logo" width="380" />
+  <img src="frontend/src/assets/hn_logo.svg" alt="HAWKNeo Logo" width="350" />
 </div>
 
 # 
@@ -8,6 +8,7 @@ HAWKneo es una aplicación web moderna que combina un frontend en Angular y un b
 ## Tabla de Contenidos
 - [Descripción](#descripción)
 - [Estructura del Proyecto](#estructura-del-proyecto)
+- [Características de la UI](#características-de-la-ui)
 - [Instalación y Primeros Pasos](#instalación-y-primeros-pasos)
 - [Arranque Rápido](#arranque-rápido)
 - [Dependencias](#dependencias)
@@ -28,8 +29,17 @@ HAWKNeo facilita asegurar la calidad y la integridad de la información asociada
 
 ![alt text](readme_image.png)
 
+## Características de la UI
 
+La interfaz de usuario de HAWKneo ha sido diseñada para ofrecer una experiencia moderna y eficiente:
 
+- **Tarjeta Principal**: Amplia tarjeta central de 1100px de ancho que proporciona espacio adecuado para todos los componentes.
+- **Sistema de Notificaciones**: Notificaciones toast integradas que aparecen en la esquina superior derecha de la tarjeta principal.
+- **Navegación por Módulos**: Barra lateral de navegación de 78px con iconos ampliados y mejor espaciado.
+- **Campos de Formulario Mejorados**: Desplegables con estilos personalizados que muestran los placeholders en gris y las opciones en negro.
+- **Efectos de Interacción**: Hover en colores primarios para todos los elementos interactivos.
+- **Botones de Acción**: Botones flotantes (ajustes, GitHub, documentación) posicionados debajo de la tarjeta principal.
+- **Diseño Responsive**: Interfaz adaptable que mantiene la coherencia visual en diferentes resoluciones.
 
 ## Instalación y Primeros Pasos
 ### Requisitos
