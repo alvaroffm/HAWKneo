@@ -1,0 +1,4 @@
+<div class="toasts-wrapper">
+    <app-success-toast *ngFor="let toast of toasts" [toast]="toast" (closed)="removeToast($event)">
+    </app-success-toast>
+</div>

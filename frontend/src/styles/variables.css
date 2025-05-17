@@ -1,0 +1,56 @@
+:root {
+    /* Primary color palette */
+    --color-primary: #0078d4;
+    --color-primary-alt: #106ebe;
+    --color-primary-light: #c7e0f4;
+    --color-primary-dark: #004578;
+
+    /* Complementary colors */
+    --color-complementary: #2b88d8;
+
+    /* Status colors */
+    --color-success: #107c10;
+    --color-error: #d13438;
+    --color-warning: #ff8c00;
+    --color-info: #0078d4;
+
+    /* Neutral colors */
+    --color-neutral-light: #f3f2f1;
+    --color-neutral: #8a8886;
+    --color-neutral-dark: #3b3a39;
+
+    /* Text colors */
+    --color-text-primary: #323130;
+    --color-text-secondary: #605e5c;
+    --color-text-light: #ffffff;
+
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+
+    /* Border radius */
+    --border-radius-sm: 2px;
+    --border-radius-md: 4px;
+    --border-radius-lg: 8px;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.14);
+
+    /* Font sizes */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-xxl: 24px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s ease;
+    --transition-slow: 0.4s ease;
+}

@@ -1,37 +1,41 @@
-.popup-backdrop {
+.loading-backdrop {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 1100;
 }
 
-.popup-content {
+.loading-content {
     background-color: white;
-    border-radius: 8px;
     padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
 }
 
-.loader {
-    border: 5px solid #f3f3f3;
-    border-top: 5px solid #0078d4;
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--color-primary);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
     animation: spin 1s linear infinite;
-    margin: 0 auto 20px;
+    margin-bottom: 15px;
 }
 
-.popup-message {
+.loading-message {
     font-size: 16px;
     color: #333;
+    text-align: center;
 }
 
 @keyframes spin {

@@ -1,53 +1,64 @@
-import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SuccessToast } from '../../../core/services/toast.service';
 
 @Component({
-    selector: 'success-toast',
-    standalone: true,
-    imports: [CommonModule],
-    template: `
-    <div class="success-toast" [ngClass]="{
-      'success-toast-success': type === 'success',
-      'success-toast-error': type === 'error',
-      'success-toast-info': type === 'info',
-      'exiting': exiting
-    }">
-      <img
-        *ngIf="type === 'success'"
-        src="icons/ic_fluent_checkmark_circle_20_regular.svg"
-        class="success-toast-icon"
-        alt="Éxito"
-      />
-      <img
-        *ngIf="type === 'error'"
-        src="icons/ic_fluent_dismiss_circle_20_regular.svg"
-        class="success-toast-icon"
-        alt="Error"
-      />
-      <img
-        *ngIf="type === 'info'"
-        src="icons/ic_fluent_info_20_regular.svg"
-        class="success-toast-icon"
-        alt="Info"
-      />
-      <span class="success-toast-message">{{ message }}</span>
-    </div>
-  `,
-    styleUrls: ['./success-toast.component.css']
+  selector: 'app-success-toast',
+  templateUrl: './success-toast.component.html',
+  styleUrls: ['./success-toast.component.css'],
+  standalone: true,
+  imports: [CommonModule]
 })
 export class SuccessToastComponent implements OnInit {
-    @Input() message: string = '¡Operación completada con éxito!';
-    @Input() type: 'success' | 'error' | 'info' = 'success';
-    @Input() exiting: boolean = false;
-    @Output() close = new EventEmitter<void>();
+  @Input() toast?: SuccessToast;
+  @Output() closed = new EventEmitter<string>();
 
-    ngOnInit() {
-        setTimeout(() => {
-            this.onClose();
-        }, 5000); // Auto close after 5 seconds
-    }
+  showToast = false;
+  progress = 100;
+  private intervalId?: number;
 
-    onClose() {
-        this.close.emit();
+  ngOnInit(): void {
+    // Trigger entrance animation
+    setTimeout(() => {
+      this.showToast = true;
+    }, 10);
+
+    if (this.toast?.autoHide) {
+      // Start progress countdown
+      this.startCountdown();
     }
+  }
+
+  closeToast(): void {
+    this.showToast = false;
+    // Wait for exit animation to complete
+    setTimeout(() => {
+      if (this.toast) {
+        this.closed.emit(this.toast.id);
+      }
+    }, 300);
+
+    this.clearCountdown();
+  }
+
+  private startCountdown(): void {
+    if (!this.toast) return;
+
+    const stepTime = 100; // Update every 100ms for smooth progress
+    const steps = this.toast.duration / stepTime;
+    const decrementPerStep = 100 / steps;
+
+    this.intervalId = window.setInterval(() => {
+      this.progress -= decrementPerStep;
+      if (this.progress <= 0) {
+        this.closeToast();
+      }
+    }, stepTime);
+  }
+
+  private clearCountdown(): void {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
+  }
 } 

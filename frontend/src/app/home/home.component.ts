@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
-import { ToastService } from '../shared/services/toast.service';
+import { ToastService } from '../core/services/toast.service';
 import { CommonModule } from '@angular/common';
 import { LoadingPopupComponent } from '../shared/components/loading-popup/loading-popup.component';
 import { ToastContainerComponent } from '../shared/components/toast-container/toast-container.component';
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
         // Simulate loading data (3 seconds)
         setTimeout(() => {
             this.showLoadingPopup = false;
-            this.toastService.show('Configuración cargada correctamente', 'success');
+            this.toastService.showSuccess('Configuración cargada correctamente');
         }, 3000);
     }
 
@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
     }
 
     getRDS() {
-        this.toastService.show('boton HNS pulsado', 'info');
+        this.toastService.showSuccess('boton HNS pulsado');
         this.showLoadingPopup = true;
         this.loadingMessage = 'Obteniendo datos de HNS...';
         this.http.get<{ ok: boolean, message: string }>('http://localhost:8000/rds').subscribe({
@@ -76,7 +76,12 @@ export class HomeComponent implements OnInit {
     }
 
     showToast(msg: string, type: 'success' | 'error') {
-        this.toastService.show(msg, type);
+        if (type === 'success') {
+            this.toastService.showSuccess(msg);
+        } else {
+            // Update once error method is implemented
+            this.toastService.showSuccess(msg);
+        }
     }
 
     getRDR() {

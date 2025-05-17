@@ -404,3 +404,11 @@ html {
   background: rgba(0, 0, 0, 0.20);
   z-index: 150;
 }
+
+.app-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,2 +1,140 @@
 /* Estilos específicos para el componente de Ingesta */
 /* Los estilos comunes se importan desde submodule-common.css */
+
+.alert {
+    background-color: #f0f9ff;
+    border-left: 4px solid #0ea5e9;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    color: #0c4a6e;
+    font-size: 14px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.loading-indicator {
+    color: #60a5fa;
+    font-size: 0.8em;
+    margin-left: 5px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.db-info {
+    margin: 20px 0;
+    color: #6b7280;
+    padding: 10px;
+    border-top: 1px dotted #e5e7eb;
+    text-align: center;
+}
+
+/* Estilos para los desplegables */
+.form-control {
+    font-family: 'Genos', 'Segoe UI', 'Roboto', 'Arial', 'Orbitron', sans-serif;
+    font-size: 16px;
+}
+
+/* Estilos para el select */
+select.form-control {
+    background-color: white;
+    border: 1px solid #ddd;
+    color: black;
+    /* Color por defecto para el texto seleccionado */
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+/* Hover sobre el select */
+select.form-control:hover {
+    border-color: var(--color-primary);
+}
+
+/* Focus sobre el select */
+select.form-control:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.2);
+    outline: none;
+}
+
+/* Estilo específico para la opción placeholder */
+.placeholder-option {
+    color: #9ca3af !important;
+}
+
+/* Estilo para opciones normales */
+select.form-control option:not([disabled]) {
+    color: black;
+}
+
+/* Estilo solo para el hover en las opciones */
+select.form-control option:hover {
+    background-color: var(--color-primary);
+    color: white;
+    box-shadow: 0 0 10px 100px var(--color-primary) inset;
+}
+
+/* Estilo para el elemento seleccionado pero no con el mismo color que el hover */
+select.form-control option:checked {
+    background-color: #f3f4f6;
+    color: black;
+}
+
+/* Cuando no hay selección, mostrar el texto en gris */
+select.form-control:invalid {
+    color: #9ca3af;
+}
+
+/* Estilo del placeholder para el input de texto */
+input.form-control::placeholder {
+    color: #9ca3af;
+    opacity: 1;
+}
+
+/* Estilo custom para el select con arrow personalizado */
+select.form-control {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%236b7280' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    padding-right: 30px;
+}
+
+/* Cambiar el color del icono al hacer hover */
+select.form-control:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%230ca9a9' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+/* Cambiar el color del icono al hacer focus */
+select.form-control:focus {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%230ca9a9' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+}
+
+/* Asegurarse que los botones también usan la fuente correcta */
+.action-btn {
+    font-family: 'Genos', 'Segoe UI', 'Roboto', 'Arial', 'Orbitron', sans-serif;
+    font-weight: 500;
+}

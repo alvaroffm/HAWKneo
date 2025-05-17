@@ -1,3 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Genos:wght@300;400;500;600;700&display=swap');
+@import './styles/variables.css';
+@import './styles/utilities.css';
+
 /* Estilo global */
 :root {
   --color-info: #386592;
@@ -36,18 +41,54 @@
   --btn-height: 135px;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  font-family: 'Genos', 'Segoe UI', 'Roboto', 'Arial', 'Orbitron', sans-serif;
-}
-
+/* Reset and base styles */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Genos', 'Segoe UI', 'Roboto', 'Arial', 'Orbitron', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  background-color: var(--color-neutral-light);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--color-primary-alt);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Hide focus outlines for mouse users, but show for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 /* Para los componentes standalone que no pueden acceder a :host directamente */
@@ -57,5 +98,3 @@ app-root {
   width: 100%;
   overflow: hidden;
 }
-
-/* You can add global styles to this file, and also import other style files */

@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .logic import get_rds_message, get_rdr_message
 from fastapi.responses import JSONResponse
+from .routes import options_routes
 
 app = FastAPI()
 
@@ -13,6 +14,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Incluir las rutas de opciones
+app.include_router(options_routes.router, prefix="/api")
 
 
 @app.get("/rds")

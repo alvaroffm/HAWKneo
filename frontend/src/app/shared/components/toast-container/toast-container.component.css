@@ -1,19 +1,15 @@
-.toast-container {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 10;
+.toasts-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    gap: 10px;
+    z-index: 1000;
+    max-width: 100%;
     pointer-events: none;
-    /* Para permitir que los clics pasen a través del contenedor */
 }
 
-.toast-container>* {
-    margin-bottom: 0px;
-    min-width: 250px;
-    max-width: 350px;
+.toasts-wrapper>* {
     pointer-events: auto;
-    /* Para que los toasts individuales sí reciban clics */
 }

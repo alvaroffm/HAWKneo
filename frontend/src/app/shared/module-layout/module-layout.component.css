@@ -20,7 +20,7 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     padding: 15px;
     padding-top: 20px;
-    width: 900px;
+    width: 1100px;
     height: 800px;
     position: relative;
     text-align: center;
@@ -74,23 +74,63 @@
     gap: 10px;
 }
 
+/* Barra lateral con ancho fijo */
 .module-sidebar {
     width: 70px;
+    /* Ancho fijo, no se expandirá */
     min-width: 70px;
-    min-height: 700px;
+    /* Asegurar que no se reduzca */
+    max-width: 70px;
+    /* Asegurar que no se expanda */
     background-color: #f5f7f9;
+    /* Color gris original */
     border-radius: 12px;
+    /* Borde redondeado */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5px 5px;
+    padding: 20px 10px;
+    height: 100%;
+    box-sizing: border-box;
     overflow: visible;
+    /* Permitir que los elementos se desborden */
     position: relative;
+    z-index: 10;
+    /* Base z-index para la barra */
+}
+
+/* Expandir la barra lateral cuando se hace hover en un botón */
+.btn-step:hover {
+    width: 180px;
+    /* Ancho expandido mayor */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-color: black;
+    z-index: 200;
+    /* Incrementar z-index al hacer hover */
+}
+
+/* Expandir la barra lateral cuando se hace hover en un botón */
+.btn-step:hover~.module-sidebar,
+.btn-step:hover {
+    width: 180px;
+}
+
+/* Usar JavaScript para esto sería mejor, pero como alternativa CSS podemos usar el selector :has() */
+/* Nota: :has() no es compatible con todos los navegadores pero es una opción moderna */
+.module-sidebar:has(.btn-step:hover) {
+    width: 190px;
+    /* Un poco más ancho que los botones para dar espacio */
+}
+
+.btn-step.active:hover {
+    width: 180px;
+    /* Mismo ancho expandido para consistencia */
 }
 
 .sidebar-top {
     flex-grow: 1;
     overflow: visible;
+    /* Permitir que los botones se desborden */
 }
 
 .sidebar-bottom {
@@ -221,18 +261,18 @@
 .steps-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     gap: 12px;
     padding: 5px 0;
     position: relative;
-    overflow: visible;
 }
 
-/* Estilos para los botones de paso */
+/* Estilos para los botones de paso con z-index alto */
 .btn-step {
     height: 46px;
     width: 46px;
+    /* Comienza con el ancho del icono */
     border-radius: 23px;
     padding: 0;
     border: 1px solid white;
@@ -241,40 +281,47 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
     cursor: pointer;
     transition: width 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    overflow: visible;
     position: relative;
     z-index: 100;
+    /* Alto z-index para aparecer por encima de todo */
     box-sizing: border-box;
+    overflow: visible;
+    /* Permitir que el contenido se desborde */
 }
 
+/* El botón se expande al hacer hover */
 .btn-step:hover {
-    width: 150px;
+    width: 180px;
+    /* Ancho expandido mayor */
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 23px;
     border-color: black;
+    z-index: 200;
+    /* Incrementar z-index al hacer hover */
 }
 
 .btn-step.active {
     background-color: var(--color-primary);
     color: white;
-    width: 46px;
     border-color: white;
     box-shadow: 0px 1px 4px var(--color-primary-alt);
 }
 
 .btn-step.active:hover {
-    width: 150px;
+    width: 180px;
+    /* Mismo ancho expandido para consistencia */
 }
 
+/* El icono siempre se mantiene en la misma posición */
 .step-icon {
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: absolute;
     left: 2px;
-    top: 0px;
+    top: 50%;
+    transform: translateY(-50%);
     z-index: 1;
     border-radius: 200px;
     background-color: inherit;
@@ -291,23 +338,29 @@
     transition: all 0.3s ease;
 }
 
+/* La etiqueta aparece cuando el botón se expande */
 .step-label {
     position: absolute;
     left: 46px;
+    /* Posición justo después del icono */
     top: 50%;
     transform: translateY(-50%);
     white-space: nowrap;
     opacity: 0;
+    /* Inicialmente invisible */
     transition: opacity 0.3s ease;
     font-size: 14px;
     font-weight: 500;
     padding-right: 15px;
     text-align: left;
     z-index: 2;
+    /* Eliminar el fondo blanco */
+    background-color: transparent;
 }
 
 .btn-step:hover .step-label {
     opacity: 1;
+    /* Visible al expandirse */
 }
 
 .btn-step.active .step-icon-image {
@@ -328,5 +381,12 @@
 .hawkneo-card,
 .module-layout,
 .module-content {
-    overflow: visible !important;
+    overflow: hidden !important;
 }
+
+/* Eliminar completamente esta clase para que no se aplique nunca */
+/* 
+.module-sidebar.expanded {
+    width: 70px;
+}
+*/
