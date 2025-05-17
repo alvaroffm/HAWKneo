@@ -5,25 +5,34 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { LoadingPopupComponent } from './loading-popup.component';
 import { SuccessToastComponent } from './success-toast.component';
+import { ToastService } from './toast.service';
+import { ToastContainerComponent } from './toast-container.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule, LoadingPopupComponent, SuccessToastComponent]
+  imports: [CommonModule, RouterModule, HttpClientModule, LoadingPopupComponent, ToastContainerComponent]
 })
 export class AppComponent {
+  ngOnInit() {
+    this.testMultipleToasts();
+  }
+
+  testMultipleToasts() {
+    this.toastService.show('Operación exitosa', 'success');
+    this.toastService.show('Algo salió mal', 'error');
+    this.toastService.show('Tarea completada', 'success');
+  }
+
   public title = 'HAWKneo';
   message = '';
   showSettingsMenu = false;
   showLoadingPopup = false;
   loadingMessage = 'Obteniendo datos de HNS...';
-  showSuccessToast = false;
-  successMessage = '¡Operación completada con éxito!';
-  toastTimeout: any = null;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastService: ToastService) { }
 
   toggleSettingsMenu() {
     this.showSettingsMenu = !this.showSettingsMenu;
@@ -52,17 +61,8 @@ export class AppComponent {
     });
   }
 
-  toastType: 'success' | 'error' = 'success';
   showToast(msg: string, type: 'success' | 'error') {
-    this.successMessage = msg;
-    this.toastType = type;
-    this.showSuccessToast = true;
-    if (this.toastTimeout) {
-      clearTimeout(this.toastTimeout);
-    }
-    this.toastTimeout = setTimeout(() => {
-      this.showSuccessToast = false;
-    }, 3000);
+    this.toastService.show(msg, type);
   }
 
   getRDR() {

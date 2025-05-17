@@ -37,8 +37,8 @@
       {{ message }}
     </div>
 
-    <!-- Toast de éxito dentro de la tarjeta -->
-    <success-toast [visible]="showSuccessToast" [message]="successMessage" [type]="toastType"></success-toast>
+    <!-- Toasts apilados -->
+    <toast-container></toast-container>
 
 <!-- Popup de carga -->
 <loading-popup *ngIf="showLoadingPopup" [message]="loadingMessage"></loading-popup>
