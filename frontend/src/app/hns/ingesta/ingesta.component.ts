@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { OptionsService, OptionItem } from '../services/options.service';
+import { ToastService } from '../../toast.service';
 
 @Component({
     selector: 'app-hns-ingesta',
@@ -33,7 +34,10 @@ export class IngestaComponent implements OnInit {
         resetDB: false
     };
 
-    constructor(private optionsService: OptionsService) { }
+    constructor(
+        private optionsService: OptionsService,
+        private toastService: ToastService
+    ) { }
 
     ngOnInit(): void {
         this.cargarOpciones();
@@ -107,25 +111,26 @@ export class IngestaComponent implements OnInit {
     reiniciarBaseDatos(): void {
         this.cargando.resetDB = true;
         this.mensaje = 'Reiniciando base de datos...';
-        this.mostrarMensaje = true;
+        // this.mostrarMensaje = true;
 
         this.optionsService.resetDatabase().subscribe({
             next: (response) => {
                 if (response.success) {
-                    this.mensaje = 'Base de datos reiniciada correctamente';
+                    // Usar toast en lugar del mensaje interno
+                    this.toastService.show('Base de datos reiniciada correctamente', 'success');
+
                     // Recargar opciones
                     setTimeout(() => this.cargarOpciones(), 1000);
                 } else {
-                    this.mensaje = 'Error al reiniciar la base de datos';
+                    this.toastService.show('Error al reiniciar la base de datos', 'error');
+                    // this.mostrarMensaje = true;
+                    setTimeout(() => this.mostrarMensaje = false, 3000);
                 }
-                setTimeout(() => {
-                    this.mostrarMensaje = false;
-                    this.cargando.resetDB = false;
-                }, 3000);
+                this.cargando.resetDB = false;
             },
             error: () => {
                 this.mensaje = 'Error al reiniciar la base de datos';
-                this.mostrarMensaje = true;
+                // this.mostrarMensaje = true;
                 this.cargando.resetDB = false;
                 setTimeout(() => this.mostrarMensaje = false, 3000);
             }

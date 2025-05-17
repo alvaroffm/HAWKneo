@@ -23,9 +23,9 @@ export class HnsComponent implements OnInit {
 
     // Definición de los pasos para este módulo
     steps: Step[] = [
-        { id: 1, name: 'Ingesta', icon: 'ic_fluent_document_catch_up_20_regular.svg', active: true },
-        { id: 2, name: 'Calidad', icon: 'ic_fluent_checkmark_circle_20_regular.svg' },
-        { id: 3, name: 'Tratamiento', icon: 'ic_fluent_data_funnel_20_regular.svg' }
+        { id: 1, name: 'Ingesta', icon: 'ingestor_icon.svg', active: true },
+        { id: 2, name: 'Calidad', icon: 'quality_icon.svg' },
+        { id: 3, name: 'Tratamiento', icon: 'treatment_icon.svg' }
     ];
 
     constructor(private http: HttpClient, private toastService: ToastService) { }
