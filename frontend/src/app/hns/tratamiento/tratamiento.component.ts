@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 @Component({
     selector: 'app-hns-tratamiento',
     templateUrl: './tratamiento.component.html',
-    styleUrls: ['./tratamiento.component.css'],
+    styleUrls: ['../shared/submodule-common.css', './tratamiento.component.css'],
     standalone: true,
     imports: [CommonModule]
 })

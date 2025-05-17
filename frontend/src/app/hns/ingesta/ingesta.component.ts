@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 @Component({
     selector: 'app-hns-ingesta',
     templateUrl: './ingesta.component.html',
-    styleUrls: ['./ingesta.component.css'],
+    styleUrls: ['../shared/submodule-common.css', './ingesta.component.css'],
     standalone: true,
     imports: [CommonModule]
 })
