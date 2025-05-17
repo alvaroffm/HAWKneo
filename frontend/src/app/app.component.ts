@@ -23,7 +23,7 @@ export class AppComponent {
   testMultipleToasts() {
     this.toastService.show('Operación exitosa', 'success');
     this.toastService.show('Algo salió mal', 'error');
-    this.toastService.show('Tarea completada', 'success');
+    this.toastService.show('Este es un mensaje informativo', 'info');
   }
 
   public title = 'HAWKneo';
@@ -39,6 +39,7 @@ export class AppComponent {
   }
 
   getRDS() {
+    this.toastService.show('boton HNS pulsado', 'info');
     this.showLoadingPopup = true;
     this.loadingMessage = 'Obteniendo datos de HNS...';
     this.http.get<{ ok: boolean, message: string }>('http://localhost:8000/rds').subscribe({

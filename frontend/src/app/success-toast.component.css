@@ -30,6 +30,11 @@
   color: #fff;
 }
 
+.success-toast-info {
+  background: var(--color-info);
+  color: #fff;
+}
+
 .success-toast-error {
   background: var(--color-error);
   color: #fff;

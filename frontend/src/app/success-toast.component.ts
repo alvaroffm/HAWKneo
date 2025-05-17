@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
     <div class="success-toast" [ngClass]="{
       'success-toast-success': type === 'success',
       'success-toast-error': type === 'error',
+      'success-toast-info': type === 'info',
       'exiting': exiting
     }">
       <img
@@ -23,6 +24,12 @@ import { CommonModule } from '@angular/common';
         class="success-toast-icon"
         alt="Error"
       />
+      <img
+        *ngIf="type === 'info'"
+        src="icons/ic_fluent_info_20_regular.svg"
+        class="success-toast-icon"
+        alt="Info"
+      />
       <span class="success-toast-message">{{ message }}</span>
     </div>
   `,
@@ -30,6 +37,6 @@ import { CommonModule } from '@angular/common';
 })
 export class SuccessToastComponent {
   @Input() message: string = '¡Operación completada con éxito!';
-  @Input() type: 'success' | 'error' = 'success';
+  @Input() type: 'success' | 'error' | 'info' = 'success';
   @Input() exiting: boolean = false;
 }
