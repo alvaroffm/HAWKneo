@@ -1,52 +1,88 @@
 .success-toast {
+  display: flex;
+  align-items: center;
+  /* Opacidad solo en fondo y borde */
   background: var(--fluent-primary-alt-alt);
-  color: var(--fluent-btn-text);
-  padding: 2px 2px;
+  /* Ejemplo: azul Fluent con opacidad, ajusta el color según tu var(--fluent-primary-alt-alt) */
+  color: var(--fluent-primary-text);
+  /* 100% opaco */
+  padding: 7px 9px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  font-size: 1.1em;
-  opacity: 1;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  font-size: 1em;
+  /* Sin animación base */
+  animation: fadein 0.2s;
   margin-bottom: 2px;
   position: static;
   width: 100%;
   box-sizing: border-box;
-  background-color: var(--fluent-primary-alt-alt);
-  border: 1px solid #e0e0e0;
+  /* background-color eliminado, ya está en background */
+  border: 1px solid rgba(224, 224, 224, 0.7);
+  /* Borde con opacidad */
 }
 
+.success-toast.exiting {
+  animation: fadeout 1s forwards !important;
+}
 
+.success-toast-success {
+  background: var(--color-success);
+  color: #fff;
+}
+
+.success-toast-info {
+  background: var(--color-info);
+  color: #fff;
+}
 
 .success-toast-error {
-  background: var(--fluent-complementary-low);
-  color: #ffffff;
+  background: var(--color-error);
+  color: #fff;
 }
 
 @keyframes fadein {
   from {
-    opacity: 0;
-    transform: translateY(-20px);
+    transform: translateX(10px);
   }
 
   to {
-    opacity: 0.98;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
 @keyframes fadeout {
   from {
-    opacity: 0.98;
+    opacity: 1;
+    transform: translateX(0);
   }
 
   to {
     opacity: 0;
+    transform: translateX(10px);
   }
+}
+
+.success-toast-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  flex-shrink: 0;
+  vertical-align: middle;
+  filter: invert(1);
 }
 
 .success-toast-message {
   font-weight: 500;
-  line-height: 1.1 !important;
+  line-height: 0.9 !important;
   margin: 0 !important;
   padding: 0 !important;
+  display: block;
+  flex: 1;
+}
+
+.success-toast-message br,
+.success-toast-message p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0.8 !important;
 }
