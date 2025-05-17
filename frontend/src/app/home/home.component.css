@@ -43,8 +43,40 @@
     overflow: hidden;
 }
 
+/* Media queries para hacer la tarjeta responsiva */
+@media (max-width: 1200px) {
+    .hawkneo-card {
+        width: 90vw;
+        max-width: 1100px;
+        padding: 30px;
+        height: 90vh;
+        max-height: 800px;
+    }
+}
+
+/* Para pantallas divididas (aproximadamente la mitad) */
+@media (max-width: 960px) {
+    .hawkneo-card {
+        width: calc(100vw - 40px);
+        /* Ancho completo menos margen */
+        max-width: 960px;
+        height: calc(100vh - 40px);
+        /* Alto completo menos margen */
+        padding: 20px;
+    }
+
+    .hawkneo-logo {
+        height: 80px;
+        margin-bottom: 15px;
+    }
+
+    .hawkneo-subtitle {
+        margin-bottom: 20px;
+    }
+}
+
 .hawkneo-logo {
-    height: 150px;
+    height: 120px;
     margin-bottom: 20px;
 }
 
@@ -198,64 +230,4 @@
     line-height: 1.5;
 }
 
-/* Botones flotantes */
-.floating-btns {
-    position: absolute;
-    bottom: -70px;
-    right: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    z-index: 100;
-}
-
-.settings-btn,
-.settings-btn-alt {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.2s ease;
-}
-
-.settings-btn {
-    background-color: #0078d4;
-    border: none;
-}
-
-.settings-btn-alt {
-    background-color: #333;
-    text-decoration: none;
-}
-
-.settings-btn-alt.github-btn {
-    background-color: #24292e;
-}
-
-.settings-btn-alt.doc-btn {
-    background-color: #6b46c1;
-}
-
-.settings-btn:hover,
-.settings-btn-alt:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-.settings-icon,
-.settings-icon-alt {
-    width: 24px;
-    height: 24px;
-}
-
-.settings-icon {
-    filter: invert(1);
-}
-
-.settings-icon-alt {
-    color: white;
-}
+/* Floating buttons are defined in app.component.css */

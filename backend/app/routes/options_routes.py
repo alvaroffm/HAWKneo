@@ -87,6 +87,9 @@ def ensure_db_exists():
         return False
 
 
+ensure_db_exists()
+
+
 @router.post("/options/reset-database", response_model=Dict[str, Any])
 async def reset_database():
     """Endpoint para reiniciar la base de datos"""
