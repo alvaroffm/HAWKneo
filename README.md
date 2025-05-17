@@ -15,16 +15,21 @@ HAWKneo es una aplicación web moderna que combina un frontend en Angular y un b
 
 ## Descripción
 HAWKNeo permite gestionar diferentes flujos de datos de referencia a partir de una serie de módulos (HNS, HNR, HNG, HNQ), proporcionando una interfaz adaptada a los tiempos que corren.
-Este sistema está especialmente diseñado para la gestión y monitorización del ciclo de vida de datos de piezas de aeronaves, abarcando desde la recepción inicial de los datos, su validación y enriquecimiento, hasta la trazabilidad completa de componentes críticos en la industria aeronáutica. HAWKNeo facilita asegurar la calidad y la integridad de la información asociada a cada pieza, permitiendo un control exhaustivo y cumplimiento normativo en entornos industriales altamente regulados.
 
+Este sistema está especialmente diseñado para la gestión y monitorización del ciclo de vida de datos de piezas de aeronaves, abarcando desde la recepción inicial de los datos, su validación y enriquecimiento, hasta la trazabilidad completa de componentes críticos en la industria aeronáutica. 
 
-![alt text](image.png)
-
+HAWKNeo facilita asegurar la calidad y la integridad de la información asociada a cada pieza, permitiendo un control exhaustivo y cumplimiento normativo en entornos industriales altamente regulados.
 
 ## Estructura del Proyecto
 - `frontend/`: Aplicación Angular (UI principal)
 - `backend/`: API REST en FastAPI (Python)
 - `scripts/`: Scripts para arrancar los servicios de frontend y backend
+
+
+![alt text](readme_image.png)
+
+
+
 
 ## Instalación y Primeros Pasos
 ### Requisitos
@@ -74,4 +79,4 @@ npx ng serve HAWKneo --open
 
 
 ## Licencia
-[MIT](LICENSE)
+Licencia de que?

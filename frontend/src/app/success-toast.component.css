@@ -1,21 +1,25 @@
 .success-toast {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  background: #20b26c;
-  color: #fff;
-  padding: 16px 28px;
+  background: var(--fluent-primary-alt-alt);
+  color: var(--fluent-btn-text);
+  padding: 2px 2px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  z-index: 2000;
   font-size: 1.1em;
-  opacity: 0.98;
+  opacity: 1;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  margin-bottom: 2px;
+  position: static;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--fluent-primary-alt-alt);
+  border: 1px solid #e0e0e0;
 }
 
+
+
 .success-toast-error {
-  background: #d32f2f;
-  color: #fff;
+  background: var(--fluent-complementary-low);
+  color: #ffffff;
 }
 
 @keyframes fadein {
@@ -42,4 +46,7 @@
 
 .success-toast-message {
   font-weight: 500;
+  line-height: 1.1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
