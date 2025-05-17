@@ -13,7 +13,10 @@ def get_rds_message():
             f" Son las {now}. Has pulsado modulo HNS. Mensaje obtenido desde el backend.",
         )
         if n == 0
-        else (False, f"Error a las {now}")
+        else (
+            False,
+            f"Error a las {now}. Venga dame algun mensaje un poco mas largo hombreeeeeeeeeeeeee",
+        )
     )
 
 

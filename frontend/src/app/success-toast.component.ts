@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,7 +6,10 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="success-toast" [ngClass]="{'success-toast-error': type === 'error'}">
+    <div class="success-toast" [ngClass]="{
+      'success-toast-error': type === 'error',
+      'exiting': exiting
+    }">
       <span class="success-toast-message">{{ message }}</span>
     </div>
   `,
@@ -15,5 +18,5 @@ import { CommonModule } from '@angular/common';
 export class SuccessToastComponent {
   @Input() message: string = '¡Operación completada con éxito!';
   @Input() type: 'success' | 'error' = 'success';
+  @Input() exiting: boolean = false;
 }
-

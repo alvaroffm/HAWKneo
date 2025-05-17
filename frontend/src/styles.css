@@ -1,10 +1,12 @@
 :root {
   --fluent-primary: #0ca9a9;
+  --fluent-primary-text: #043434;
   --fluent-primary-shadow: #0ca9a946;
   --fluent-primary-alt: #0A8787;
+  --fluent-primary-alt-opacity: #1fd7d760;
   --fluent-primary-alt-alt: #0ECBCB;
   --fluent-complementary: #A90C0C;
-  --fluent-complementary-low: #A90C0C;
+  --fluent-complementary-opacity: #990d0d8d;
   --fluent-bg: #ffffff00;
   --fluent-card-bg: #ffffffa6;
   --fluent-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.07);

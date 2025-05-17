@@ -10,9 +10,11 @@ import { SuccessToastComponent } from './success-toast.component';
   template: `
     <div class="toast-container">
       <ng-container *ngIf="toasts$ | async as toasts">
-        <success-toast *ngFor="let toast of toasts.slice().reverse()"
+        <success-toast *ngFor="let toast of toasts; trackBy: trackById"
           [message]="toast.message"
           [type]="toast.type"
+          [exiting]="!!toast.exiting"
+          [ngClass]="{'exiting': toast.exiting}"
           (click)="remove(toast.id)">
         </success-toast>
       </ng-container>
@@ -26,4 +28,7 @@ export class ToastContainerComponent {
     this.toasts$ = this.toastService.toasts$;
   }
   remove(id: number) { this.toastService.remove(id); }
+  trackById(index: number, toast: any) {
+    return toast.id;
+  }
 }
