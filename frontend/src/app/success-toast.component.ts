@@ -7,9 +7,22 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="success-toast" [ngClass]="{
+      'success-toast-success': type === 'success',
       'success-toast-error': type === 'error',
       'exiting': exiting
     }">
+      <img
+        *ngIf="type === 'success'"
+        src="icons/ic_fluent_checkmark_circle_20_regular.svg"
+        class="success-toast-icon"
+        alt="Éxito"
+      />
+      <img
+        *ngIf="type === 'error'"
+        src="icons/ic_fluent_dismiss_circle_20_regular.svg"
+        class="success-toast-icon"
+        alt="Error"
+      />
       <span class="success-toast-message">{{ message }}</span>
     </div>
   `,

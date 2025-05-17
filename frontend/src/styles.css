@@ -1,4 +1,7 @@
 :root {
+  --color-success: #0ea27f;
+  --color-error: #A90C0C;
+  ;
   --fluent-primary: #0ca9a9;
   --fluent-primary-text: #043434;
   --fluent-primary-shadow: #0ca9a946;
@@ -14,7 +17,7 @@
   --fluent-title: #222;
   --fluent-subtitle: #666;
   --fluent-message: #333;
-  --fluent-btn-bg: #0ca9a900;
+  --fluent-btn-bg: #0ca9a906;
   --fluent-btn-bg-hover: #0CA0A0;
   --fluent-btn-text: #060606;
   --fluent-btn-shadow: 0 2px 8px 0 rgba(14, 165, 233, 0.10);

@@ -1,10 +1,12 @@
 .success-toast {
+  display: flex;
+  align-items: center;
   /* Opacidad solo en fondo y borde */
   background: var(--fluent-primary-alt-alt);
   /* Ejemplo: azul Fluent con opacidad, ajusta el color según tu var(--fluent-primary-alt-alt) */
   color: var(--fluent-primary-text);
   /* 100% opaco */
-  padding: 12px 12px;
+  padding: 7px 9px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   font-size: 1em;
@@ -23,9 +25,14 @@
   animation: fadeout 1s forwards !important;
 }
 
+.success-toast-success {
+  background: var(--color-success);
+  color: #fff;
+}
+
 .success-toast-error {
-  background: var(--fluent-complementary);
-  color: #ffffff;
+  background: var(--color-error);
+  color: #fff;
 }
 
 @keyframes fadein {
@@ -50,12 +57,22 @@
   }
 }
 
+.success-toast-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  flex-shrink: 0;
+  vertical-align: middle;
+  filter: invert(1);
+}
+
 .success-toast-message {
   font-weight: 500;
   line-height: 0.9 !important;
   margin: 0 !important;
   padding: 0 !important;
   display: block;
+  flex: 1;
 }
 
 .success-toast-message br,

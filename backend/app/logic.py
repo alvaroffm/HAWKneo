@@ -10,7 +10,7 @@ def get_rds_message():
     return (
         (
             True,
-            f" Son las {now}. Has pulsado modulo HNS. Mensaje obtenido desde el backend.",
+            f" Son las {now}. Éxito obtenido desde el backend.",
         )
         if n == 0
         else (
