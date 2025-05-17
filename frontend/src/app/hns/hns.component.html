@@ -1,0 +1,20 @@
+<app-module-layout [title]="'HNS - Ingesta de datos'" [moduleIcon]="'ic_fluent_document_catch_up_20_regular.svg'"
+    [showLoadingPopup]="showLoadingPopup" [loadingMessage]="loadingMessage" [steps]="steps" [(activeStep)]="activeStep">
+
+    <div [ngSwitch]="activeStep" class="module-content-inner">
+        <!-- Paso 1: Ingesta -->
+        <div *ngSwitchCase="1" class="step-content">
+            <app-hns-ingesta></app-hns-ingesta>
+        </div>
+
+        <!-- Paso 2: Calidad -->
+        <div *ngSwitchCase="2" class="step-content">
+            <app-hns-calidad></app-hns-calidad>
+        </div>
+
+        <!-- Paso 3: Tratamiento -->
+        <div *ngSwitchCase="3" class="step-content">
+            <app-hns-tratamiento></app-hns-tratamiento>
+        </div>
+    </div>
+</app-module-layout>

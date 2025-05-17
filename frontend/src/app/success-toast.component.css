@@ -1,52 +1,44 @@
 .success-toast {
   display: flex;
   align-items: center;
-  /* Opacidad solo en fondo y borde */
-  background: var(--fluent-primary-alt-alt);
-  /* Ejemplo: azul Fluent con opacidad, ajusta el color según tu var(--fluent-primary-alt-alt) */
-  color: var(--fluent-primary-text);
-  /* 100% opaco */
-  padding: 7px 9px;
+  background-color: var(--color-success);
+  color: white;
+  padding: 12px 16px;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
-  font-size: 1em;
-  /* Sin animación base */
-  animation: fadein 0.2s;
-  margin-bottom: 2px;
-  position: static;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  animation: fadein 0.3s;
+  margin-bottom: 4px;
   width: 100%;
   box-sizing: border-box;
-  /* background-color eliminado, ya está en background */
-  border: 1px solid rgba(224, 224, 224, 0.7);
-  /* Borde con opacidad */
+  border: none;
 }
 
 .success-toast.exiting {
-  animation: fadeout 1s forwards !important;
+  animation: fadeout 0.8s forwards !important;
 }
 
 .success-toast-success {
-  background: var(--color-success);
-  color: #fff;
+  background-color: var(--color-success);
 }
 
 .success-toast-info {
-  background: var(--color-info);
-  color: #fff;
+  background-color: var(--color-info);
 }
 
 .success-toast-error {
-  background: var(--color-error);
-  color: #fff;
+  background-color: var(--color-error);
 }
 
 @keyframes fadein {
   from {
-    transform: translateX(10px);
+    transform: translateX(20px);
+    opacity: 0;
   }
 
   to {
     transform: translateX(0);
+    opacity: 1;
   }
 }
 
@@ -58,25 +50,22 @@
 
   to {
     opacity: 0;
-    transform: translateX(10px);
+    transform: translateX(20px);
   }
 }
 
 .success-toast-icon {
   width: 20px;
   height: 20px;
-  margin-right: 5px;
+  margin-right: 10px;
   flex-shrink: 0;
-  vertical-align: middle;
-  filter: invert(1);
+  filter: brightness(0) invert(1);
 }
 
 .success-toast-message {
   font-weight: 500;
-  line-height: 0.9 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: block;
+  line-height: 1.3;
+  margin: 0;
   flex: 1;
 }
 

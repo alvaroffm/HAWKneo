@@ -1,0 +1,17 @@
+<app-module-layout [title]="'HNG - Gestión de datos relacionales'"
+    [moduleIcon]="'ic_fluent_data_histogram_20_regular.svg'" [showLoadingPopup]="showLoadingPopup"
+    [loadingMessage]="loadingMessage" [steps]="steps">
+    <div class="module-content-inner">
+        <div *ngIf="loading" class="loading-indicator">Cargando datos relacionales...</div>
+
+        <div *ngIf="!loading" class="message-container">
+            <div class="message-box">
+                {{ message || 'No hay datos relacionales disponibles.' }}
+            </div>
+
+            <button class="refresh-btn" (click)="getData()">
+                Actualizar datos relacionales
+            </button>
+        </div>
+    </div>
+</app-module-layout>

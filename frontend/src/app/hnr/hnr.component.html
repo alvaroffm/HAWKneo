@@ -1,0 +1,16 @@
+<app-module-layout [title]="'HNR - Reporte de datos'" [moduleIcon]="'ic_fluent_megaphone_loud_20_regular.svg'"
+    [showLoadingPopup]="showLoadingPopup" [loadingMessage]="loadingMessage" [steps]="steps">
+    <div class="module-content-inner">
+        <div *ngIf="loading" class="loading-indicator">Cargando datos...</div>
+
+        <div *ngIf="!loading" class="message-container">
+            <div class="message-box">
+                {{ message || 'No hay datos disponibles.' }}
+            </div>
+
+            <button class="refresh-btn" (click)="getData()">
+                Obtener reporte
+            </button>
+        </div>
+    </div>
+</app-module-layout>

@@ -1,0 +1,119 @@
+.submodule-container {
+    padding: 0;
+    height: 100%;
+}
+
+.submodule-title {
+    color: #d9214e;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.submodule-content {
+    padding: 0 0 20px 0;
+}
+
+.metrics-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.metric-card {
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.2s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.metric-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.metric-name {
+    font-size: 14px;
+    color: #4B5563;
+}
+
+.quality-actions {
+    margin: 30px 0;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+}
+
+.quality-info h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #111827;
+}
+
+.quality-options {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quality-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quality-option label {
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.action-btn.primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.action-btn.primary:hover {
+    background-color: var(--color-primary-alt);
+}
+
+.action-btn.secondary {
+    background-color: #f3f4f6;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.action-btn.secondary:hover {
+    background-color: #e5e7eb;
+}
