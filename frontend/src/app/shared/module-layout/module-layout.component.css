@@ -6,14 +6,13 @@
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0;
     padding: 0;
-    background-color: var(--color-primary);
+    background-color: white;
     overflow: hidden;
-    /* Permitir que elementos con z-index más alto sean visibles */
-    z-index: 1;
 }
 
 .hawkneo-card {
@@ -27,6 +26,12 @@
     position: relative;
     text-align: center;
     overflow: hidden;
+}
+
+.hawkneo-card:hover {
+    box-shadow: 0 0px 0px 0 rgba(var(--color-primary-rgb), 0.2), 0 0px 30px 0 rgba(var(--color-primary-rgb), 0.19);
+    /* Or a simpler one using --color-primary directly if you prefer a solid shadow */
+    /* box-shadow: 0 0 15px var(--color-primary); */
 }
 
 /* Media queries para hacer la tarjeta responsiva */
