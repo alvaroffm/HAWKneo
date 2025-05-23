@@ -21,14 +21,14 @@ Este sistema está especialmente diseñado para la gestión y monitorización de
 
 HAWKNeo facilita asegurar la calidad y la integridad de la información asociada a cada pieza, permitiendo un control exhaustivo y cumplimiento normativo en entornos industriales altamente regulados.
 
+![](2025-05-23-20-25-46.png)
+
 ## Estructura del Proyecto
 - `frontend/`: Aplicación Angular (UI principal)
 - `backend/`: API REST en FastAPI (Python)
 - `scripts/`: Scripts para arrancar los servicios de frontend y backend
 
-
-![](readme_img.png)
-
+![](2025-05-23-20-25-13.png)
 
 
 ## Características de la UI
@@ -42,7 +42,7 @@ La interfaz de usuario de HAWKneo ha sido diseñada para ofrecer una experiencia
 - **Efectos de Interacción**: Hover en colores primarios para todos los elementos interactivos.
 - **Botones de Acción**: Botones flotantes (ajustes, GitHub, documentación) posicionados debajo de la tarjeta principal.
 - **Diseño Responsive**: Interfaz adaptable que mantiene la coherencia visual en diferentes resoluciones.
-![](hns_img.png)
+![](2025-05-23-20-23-35.png)
 ## Instalación y Primeros Pasos
 ### Requisitos
 - Angular CLI (`npm install -g @angular/cli`)
