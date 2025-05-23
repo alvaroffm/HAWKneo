@@ -1,0 +1,17 @@
+<div class="toast-container" [class.show]="showToast">
+    <div class="toast-content" [ngClass]="'toast-' + toast?.type">
+        <div class="toast-icon">
+            <ng-container [ngSwitch]="toast?.type">
+                <span *ngSwitchCase="'success'" class="icon-success">✓</span>
+                <span *ngSwitchCase="'error'" class="icon-error">✗</span>
+                <span *ngSwitchCase="'warning'" class="icon-warning">!</span>
+                <span *ngSwitchCase="'info'" class="icon-info">i</span>
+            </ng-container>
+        </div>
+        <div class="toast-message">{{ toast?.message }}</div>
+        <button class="toast-close" (click)="closeToast()">×</button>
+    </div>
+    <div *ngIf="toast?.autoHide" class="toast-progress">
+        <div class="toast-progress-bar" [style.width.%]="progress"></div>
+    </div>
+</div>

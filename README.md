@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="frontend/src/assets/hn_logo.svg" alt="HAWKNeo Logo" width="380" />
+  <img src="frontend/src/assets/hn_logo.svg" alt="HAWKNeo Logo" width="270" />
 </div>
 
 # 
@@ -8,6 +8,7 @@ HAWKneo es una aplicación web moderna que combina un frontend en Angular y un b
 ## Tabla de Contenidos
 - [Descripción](#descripción)
 - [Estructura del Proyecto](#estructura-del-proyecto)
+- [Características de la UI](#características-de-la-ui)
 - [Instalación y Primeros Pasos](#instalación-y-primeros-pasos)
 - [Arranque Rápido](#arranque-rápido)
 - [Dependencias](#dependencias)
@@ -20,21 +21,37 @@ Este sistema está especialmente diseñado para la gestión y monitorización de
 
 HAWKNeo facilita asegurar la calidad y la integridad de la información asociada a cada pieza, permitiendo un control exhaustivo y cumplimiento normativo en entornos industriales altamente regulados.
 
+![](2025-05-23-20-25-46.png)
+
 ## Estructura del Proyecto
 - `frontend/`: Aplicación Angular (UI principal)
 - `backend/`: API REST en FastAPI (Python)
 - `scripts/`: Scripts para arrancar los servicios de frontend y backend
 
 
-![alt text](readme_image.png)
+## Características de la UI
 
+La interfaz de usuario de HAWKneo ha sido diseñada para ofrecer una experiencia moderna y eficiente:
 
-
+- **Tarjeta Principal**: Amplia tarjeta central de 1100px de ancho que proporciona espacio adecuado para todos los componentes.
+- **Sistema de Notificaciones**: Notificaciones toast integradas que aparecen en la esquina superior derecha de la tarjeta principal.
+- **Navegación por Módulos**: Barra lateral de navegación de 78px con iconos ampliados y mejor espaciado.
+- **Campos de Formulario Mejorados**: Desplegables con estilos personalizados que muestran los placeholders en gris y las opciones en negro.
+- **Efectos de Interacción**: Hover en colores primarios para todos los elementos interactivos.
+- **Botones de Acción**: Botones flotantes (ajustes, GitHub, documentación) posicionados debajo de la tarjeta principal.
+- **Diseño Responsive**: Interfaz adaptable que mantiene la coherencia visual en diferentes resoluciones.
+![](2025-05-23-20-25-13.png)
 
 ## Instalación y Primeros Pasos
 ### Requisitos
 - Angular CLI (`npm install -g @angular/cli`)
 - Python 3.8+
+
+## Dependencias Principales
+- **Frontend:** Angular 19
+- **Backend:** FastAPI, Uvicorn
+
+
 
 ### Instalación Frontend
 ```bash
@@ -72,10 +89,6 @@ O manualmente:
 cd frontend
 npx ng serve HAWKneo --open
 ```
-
-## Dependencias Principales
-- **Frontend:** Angular 19
-- **Backend:** FastAPI, Uvicorn
 
 
 ## Licencia

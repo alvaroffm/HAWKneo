@@ -1,0 +1,47 @@
+<div class="submodule-container">
+    <h2 class="submodule-title">Ingesta de datos</h2>
+
+    <div class="submodule-content">
+        <p>Este submódulo permite configurar la conexión a las fuentes de datos y procesar su ingesta en el sistema.</p>
+
+        <div class="form-group">
+            <label>Fuente: <span *ngIf="cargando.fuentes" class="loading-indicator">(cargando...)</span></label>
+            <select class="form-control" [(ngModel)]="fuenteSeleccionada" [disabled]="cargando.fuentes" required>
+                <option value="" disabled selected class="placeholder-option">Seleccione una fuente</option>
+                <option *ngFor="let fuente of fuentesDatos" [value]="fuente.value">{{ fuente.label }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Clase: <span *ngIf="cargando.clases" class="loading-indicator">(cargando...)</span></label>
+            <select class="form-control" [(ngModel)]="claseSeleccionada" [disabled]="cargando.clases" required>
+                <option value="" disabled selected class="placeholder-option">Seleccione una clase</option>
+                <option *ngFor="let clase of clases" [value]="clase.value">{{ clase.label }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Versión:</label>
+            <input type="text" class="form-control" [(ngModel)]="versionSeleccionada" placeholder="Introduce la versión"
+                required>
+        </div>
+
+        <div *ngIf="mostrarMensaje" class="alert">
+            {{ mensaje }}
+        </div>
+
+        <div class="db-info">
+            <p><small>Los datos son cargados desde una base de datos SQLite.</small></p>
+        </div>
+
+        <div class="actions">
+            <button class="action-btn primary" (click)="ejecutarIngesta()"
+                [disabled]="cargando.fuentes || cargando.clases || cargando.versiones">Ejecutar</button>
+
+            <button class="action-btn secondary" (click)="reiniciarBaseDatos()" [disabled]="cargando.resetDB">
+                <span *ngIf="!cargando.resetDB">Reiniciar base de datos</span>
+                <span *ngIf="cargando.resetDB">Reiniciando...</span>
+            </button>
+        </div>
+    </div>
+</div>

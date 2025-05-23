@@ -1,15 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Genos:wght@300;400;500;600;700&display=swap');
+@import './styles/variables.css';
+@import './styles/utilities.css';
+
+/* Estilo global */
 :root {
+  --color-info: #386592;
+  --color-secondary: #f0f4f8;
+  --color-accent: #0078d4;
+  --color-text: #333;
+  --color-text-light: #6B7280;
+  --color-bg: #f9fafb;
+  --color-border: #e5e7eb;
   --color-info: #0f446f;
   --color-success: #0ea27f;
   --color-error: #A90C0C;
-  ;
-  --fluent-primary: #0ca9a9;
-  --fluent-primary-text: #043434;
+  --color-primary-text: #043434;
   --fluent-primary-shadow: #0ca9a946;
-  --fluent-primary-alt: #0A8787;
+  --color-primary-alt: #0A8787;
+  --color-primary: #0ca9a9;
+  --color-primary-bg: #1fc2c209;
+  --color-primary-rgb: 12, 169, 169;
+  /* Versión RGB del color primario para animaciones */
   --fluent-primary-alt-opacity: #1fd7d760;
-  --fluent-primary-alt-alt: #0ECBCB;
-  --fluent-complementary: #A90C0C;
+  --color-primary-alt-alt: #0ECBCB;
+  --color-complementary: #A90C0C;
   --fluent-complementary-opacity: #990d0d8d;
   --fluent-bg: #ffffff00;
   --fluent-card-bg: #ffffffa6;
@@ -26,9 +41,60 @@
   --btn-height: 135px;
 }
 
-body,
-html {
-  font-family: 'Genos', 'Segoe UI', 'Roboto', 'Arial', 'Orbitron', sans-serif;
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Genos', 'Segoe UI', 'Roboto', 'Arial', 'Orbitron', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--color-primary-alt);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Focus styles for accessibility */
+:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Hide focus outlines for mouse users, but show for keyboard */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Para los componentes standalone que no pueden acceder a :host directamente */
+app-root {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}

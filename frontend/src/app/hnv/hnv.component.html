@@ -1,0 +1,16 @@
+<app-module-layout [title]="'HNV - Validación y Calidad de Datos'" [moduleIcon]="'ic_fluent_database_20_regular.svg'"
+    [showLoadingPopup]="showLoadingPopup" [loadingMessage]="loadingMessage" [steps]="steps">
+    <div class="module-content-inner">
+        <div *ngIf="loading" class="loading-indicator">Cargando datos...</div>
+
+        <div *ngIf="!loading" class="message-container">
+            <div class="message-box">
+                {{ message || 'No hay datos de validación disponibles.' }}
+            </div>
+
+            <button class="refresh-btn" (click)="getData()">
+                Validar datos
+            </button>
+        </div>
+    </div>
+</app-module-layout>

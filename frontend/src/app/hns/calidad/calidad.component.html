@@ -1,0 +1,41 @@
+<div class="submodule-container">
+    <h2 class="submodule-title">Calidad de datos</h2>
+
+    <div class="submodule-content">
+        <p>Este submódulo permite verificar y mantener la calidad de los datos ingresados al sistema.</p>
+
+        <div class="metrics-container">
+            <div class="metric-card" *ngFor="let metrica of metricas">
+                <div class="metric-value">{{ metrica.valor }}{{ metrica.unidad }}</div>
+                <div class="metric-name">{{ metrica.nombre }}</div>
+            </div>
+        </div>
+
+        <div class="quality-actions">
+            <div class="quality-info">
+                <h3>Acciones disponibles</h3>
+                <p>Las siguientes acciones pueden mejorar la calidad de los datos importados:</p>
+            </div>
+
+            <div class="quality-options">
+                <div class="quality-option">
+                    <input type="checkbox" id="remove-duplicates" checked>
+                    <label for="remove-duplicates">Eliminar duplicados</label>
+                </div>
+                <div class="quality-option">
+                    <input type="checkbox" id="standardize-format">
+                    <label for="standardize-format">Estandarizar formatos</label>
+                </div>
+                <div class="quality-option">
+                    <input type="checkbox" id="fix-missing">
+                    <label for="fix-missing">Completar datos faltantes</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="action-btn primary">Analizar datos</button>
+            <button class="action-btn secondary">Ver historial de análisis</button>
+        </div>
+    </div>
+</div>

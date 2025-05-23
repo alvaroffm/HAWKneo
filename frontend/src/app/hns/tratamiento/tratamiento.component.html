@@ -1,0 +1,53 @@
+<div class="submodule-container">
+    <h2 class="submodule-title">Tratamiento de datos</h2>
+
+    <div class="submodule-content">
+        <p>Este submódulo permite aplicar transformaciones y tratamientos a los datos ingresados.</p>
+
+        <div class="transformations-list">
+            <div class="transformation-item" *ngFor="let trans of transformaciones" [ngClass]="trans.estado">
+                <div class="transformation-icon">
+                    <i class="status-icon"></i>
+                </div>
+                <div class="transformation-details">
+                    <div class="transformation-name">{{ trans.nombre }}</div>
+                    <div class="transformation-desc">{{ trans.descripcion }}</div>
+                </div>
+                <div class="transformation-status">
+                    <span class="status-badge">{{ trans.estado }}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="transformation-new">
+            <h3>Nueva transformación</h3>
+
+            <div class="form-group">
+                <label>Tipo de transformación:</label>
+                <select class="form-control">
+                    <option>Normalización</option>
+                    <option>Limpieza</option>
+                    <option>Enriquecimiento</option>
+                    <option>Concatenación</option>
+                    <option>Mapeo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Campo objetivo:</label>
+                <input type="text" class="form-control" placeholder="Seleccione un campo">
+            </div>
+
+            <div class="form-group">
+                <label>Reglas de transformación:</label>
+                <textarea class="form-control" rows="3"
+                    placeholder="Especifique las reglas de transformación"></textarea>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="action-btn primary">Aplicar transformación</button>
+            <button class="action-btn secondary">Descargar datos transformados</button>
+        </div>
+    </div>
+</div>

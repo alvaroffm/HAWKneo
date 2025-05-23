@@ -1,0 +1,84 @@
+<div class="hawkneo-main">
+  <div class="hawkneo-content-wrapper">
+    <div class="hawkneo-card module-card">
+      <div class="module-header">
+        <div class="logo-title-container">
+          <img
+            src="hn_simple_logo.svg"
+            alt="HAWKneo Logo"
+            class="hawkneo-logo-small"
+          />
+          <h1 class="module-title">
+            <img
+              *ngIf="moduleIcon"
+              [src]="'icons/' + moduleIcon"
+              alt="Módulo icono"
+              class="module-title-icon"
+            />
+            {{ title }}
+          </h1>
+        </div>
+      </div>
+
+      <!-- Nueva estructura con sidebar izquierda -->
+      <div class="module-layout">
+        <!-- Sidebar izquierda -->
+        <div class="module-sidebar">
+          <div class="sidebar-top">
+            <!-- Botones de pasos -->
+            <div class="steps-container">
+              <button
+                *ngFor="let step of steps"
+                class="btn-step"
+                [ngClass]="{ active: activeStep === step.id }"
+                (click)="setActiveStep(step.id)"
+              >
+                <div class="step-icon">
+                  <img
+                    src="icons/{{ getIconForStep(step.id) }}"
+                    alt="{{ step.name }}"
+                    class="step-icon-image"
+                  />
+                  <span class="step-number">{{ step.id }}</span>
+                </div>
+                <div class="step-label">
+                  <span class="step-name">{{ step.name }}</span>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="sidebar-bottom">
+            <!-- Botón de volver en la parte inferior de la sidebar -->
+            <button
+              class="back-btn"
+              routerLink="/"
+              aria-label="Volver a la página principal"
+            >
+              <img
+                src="icons/ic_fluent_ios_arrow_ltr_24_filled.svg"
+                alt="Volver"
+                class="back-btn-icon"
+              />
+            </button>
+          </div>
+        </div>
+
+        <!-- Contenido principal -->
+        <div class="module-content">
+          <div class="content-card">
+            <ng-content></ng-content>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toasts apilados -->
+      <app-toast-container></app-toast-container>
+
+      <!-- Popup de carga -->
+      <app-loading-popup
+        *ngIf="showLoadingPopup"
+        [message]="loadingMessage"
+      ></app-loading-popup>
+    </div>
+  </div>
+</div>
