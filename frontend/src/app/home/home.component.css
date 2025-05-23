@@ -1,5 +1,5 @@
 /* Estilos principales de HAWKneo */
-/* Aseguramos que el body y html no tengan márgenes ni barras de desplazamiento */
+/* Aseguramos que el body y html no tengan márgenes ni barras de desplazamiento   */
 :host {
     display: block;
     height: 100vh;
