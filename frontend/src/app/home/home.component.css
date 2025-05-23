@@ -19,7 +19,7 @@
     align-items: center;
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: var(--color-primary-bg);
     overflow: hidden;
 }
 
@@ -34,13 +34,16 @@
 .hawkneo-card {
     background-color: white;
     border-radius: 16px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 0px 10px 1px rgba(197, 197, 197, 0.164);
     padding: 40px;
     width: 1100px;
     height: 800px;
     position: relative;
-    text-align: center;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .hawkneo-card:hover {
@@ -82,8 +85,8 @@
 }
 
 .hawkneo-logo {
-    height: 120px;
-    margin-bottom: 20px;
+    height: 140px;
+    margin-bottom: 5px;
 }
 
 .hawkneo-title {
@@ -96,7 +99,7 @@
 .hawkneo-subtitle {
     color: #6B7280;
     font-size: 14px;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
     font-weight: 400;
 }
 
@@ -156,12 +159,53 @@
     transition: all 0.3s ease;
     cursor: pointer;
     height: 144px;
+    min-width: 300px;
     /* Altura reducida en un 20% */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Styles for disabled fluent buttons */
+.fluent-btn:disabled,
+.fluent-btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.6;
+    background-color: #f0f0f0; /* A light grey to indicate disabled state */
+    border-color: #d0d0d0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Keep original shadow or remove */
+    transform: none !important; 
+    animation: none !important;
+}
+
+/* Ensure hover styles do not apply to disabled buttons */
+.fluent-btn:disabled:hover,
+.fluent-btn[disabled]:hover {
+    background-color: #f0f0f0; /* Keep disabled background */
+    border-color: #d0d0d0; /* Keep disabled border */
+    transform: none; /* Ensure no transform on hover */
+    animation: none; /* Ensure no animation on hover */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Keep original shadow or remove */
+}
+
+/* Ensure text color inside disabled button does not change on its hover (if any parent hover triggers it) */
+.fluent-btn:disabled .fluent-btn-title,
+.fluent-btn[disabled] .fluent-btn-title {
+    color: #111827 !important; /* Original title color, prevent hover change */
+}
+
+.fluent-btn:disabled .fluent-btn-desc,
+.fluent-btn[disabled] .fluent-btn-desc {
+    color: #6B7280 !important; /* Original desc color, prevent hover change */
+}
+
+/* Ensure icon styles inside disabled button do not change and no animation */
+.fluent-btn:disabled .fluent-icon,
+.fluent-btn[disabled] .fluent-icon {
+    filter: grayscale(80%) !important; /* Make icon greyed out and prevent hover change */
+    animation: none !important;
 }
 
 .fluent-btn:hover {
@@ -256,3 +300,7 @@
 }
 
 /* Floating buttons are defined in app.component.css */
+
+.hawkneo-main-content-group {
+    text-align: center;
+}

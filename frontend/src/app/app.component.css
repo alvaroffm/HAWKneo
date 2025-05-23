@@ -7,6 +7,7 @@
 
   /* Dimensiones de los botones */
   --button-size: 54px;
+  --button-size-small: calc(var(--button-size) / 1.25); /* New variable for smaller buttons */
   --button-gap: 15px;
 
   /* Posición relativa de los botones */
@@ -51,6 +52,7 @@
   display: flex !important;
   flex-direction: row !important;
   /* Siempre horizontal */
+  align-items: flex-end !important;
   gap: var(--button-gap) !important;
   pointer-events: auto !important;
 }
@@ -83,18 +85,24 @@
   text-decoration: none;
 }
 
-.settings-btn-alt.github-btn {
-  background-color: #24292e;
+.settings-btn-alt.github-btn,
+.settings-btn-alt.doc-btn {
+  width: var(--button-size-small);
+  height: var(--button-size-small);
 }
 
-.settings-btn-alt.doc-btn {
-  background-color: var(--color-primary-alt);
+/* Adjust icon size for smaller buttons */
+.settings-btn-alt.github-btn .settings-icon-alt,
+.settings-btn-alt.doc-btn .settings-icon-alt {
+  width: calc(var(--button-size-small) * 0.55); /* Adjusted multiplier for smaller icons */
+  height: calc(var(--button-size-small) * 0.55);
 }
 
 .settings-btn:hover,
 .settings-btn-alt:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+  background-color: var(--color-complementary); /* Changed hover background color */
 }
 
 .settings-icon,
