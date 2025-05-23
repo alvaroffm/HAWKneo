@@ -6,6 +6,7 @@ from .routes import options_routes
 
 app = FastAPI()
 
+
 # Permitir CORS para el frontend en Angular
 app.add_middleware(
     CORSMiddleware,

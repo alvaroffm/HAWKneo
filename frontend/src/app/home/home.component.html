@@ -1,55 +1,81 @@
 <div class="hawkneo-main">
-    <div class="hawkneo-content-wrapper">
-        <div class="hawkneo-card">
-            <div class="hawkneo-main-content-group">
-                <img src="hn_logo.svg" alt="HAWKneo Logo" class="hawkneo-logo" />
-                <h2 class="hawkneo-subtitle">Lo que debería ser, y no es.</h2>
-                <div class="hawkneo-actions-grid">
-                    <button class="fluent-btn" (click)="navigateToModule('hns')">
-                        <div class="fluent-btn-content">
-                            <img src="icons/ic_fluent_document_catch_up_20_regular.svg" class="fluent-icon"
-                                alt="HNS Icon" />
-                            <div class="fluent-btn-title">HNS</div>
-                            <div class="fluent-btn-desc">Ingesta de datos</div>
-                        </div>
-                    </button>
-                    <button class="fluent-btn" (click)="navigateToModule('hnr')">
-                        <div class="fluent-btn-content">
-                            <img src="icons/ic_fluent_megaphone_loud_20_regular.svg" class="fluent-icon" alt="HNR Icon" />
-                            <div class="fluent-btn-title">HNR</div>
-                            <div class="fluent-btn-desc">Reporte de datos</div>
-                        </div>
-                    </button>
-                    <button class="fluent-btn" (click)="navigateToModule('hng')" [disabled]="true">
-                        <div class="fluent-btn-content">
-                            <img src="icons/ic_fluent_data_histogram_20_regular.svg" class="fluent-icon" alt="HNG Icon" />
-                            <div class="fluent-btn-title">HNG</div>
-                            <div class="fluent-btn-desc">Gestión de datos relacionales</div>
-                        </div>
-                    </button>
-                    <button class="fluent-btn" (click)="navigateToModule('hnv')" [disabled]="true">
-                        <div class="fluent-btn-content">
-                            <img src="icons/ic_fluent_database_20_regular.svg" class="fluent-icon" alt="HNV Icon" />
-                            <div class="fluent-btn-title">HNV</div>
-                            <div class="fluent-btn-desc">Calidad y validación de datos</div>
-                        </div>
-                    </button>
-                </div>
+  <div class="hawkneo-content-wrapper">
+    <div class="hawkneo-card">
+      <div class="hawkneo-main-content-group">
+        <img src="hn_logo.svg" alt="HAWKneo Logo" class="hawkneo-logo" />
+        <h2 class="hawkneo-subtitle">Lo que debería ser, y no es.</h2>
+        <div class="hawkneo-actions-grid">
+          <button class="fluent-btn" (click)="navigateToModule('hns')">
+            <div class="fluent-btn-content">
+              <img
+                src="icons/ic_fluent_document_catch_up_20_regular.svg"
+                class="fluent-icon"
+                alt="HNS Icon"
+              />
+              <div class="fluent-btn-title">HNS</div>
+              <div class="fluent-btn-desc">Ingesta de datos</div>
             </div>
-            <!-- <div class="hawkneo-message"> -->
-            <!--     {{ message }} -->
-            <!-- </div> -->
-
-            <div class="hawkneo-footer-info">
-                <p>&copy; 2025 HAWKneo Project. All rights reserved.</p>
-                <p>Developed by <del>AFM y NUR</del> Cursor.</p>
+          </button>
+          <button class="fluent-btn" (click)="navigateToModule('hnr')">
+            <div class="fluent-btn-content">
+              <img
+                src="icons/ic_fluent_megaphone_loud_20_regular.svg"
+                class="fluent-icon"
+                alt="HNR Icon"
+              />
+              <div class="fluent-btn-title">HNR</div>
+              <div class="fluent-btn-desc">Reporte de datos</div>
             </div>
-
-            <!-- Toasts apilados -->
-            <app-toast-container></app-toast-container>
-
-            <!-- Popup de carga -->
-            <app-loading-popup *ngIf="showLoadingPopup" [message]="loadingMessage"></app-loading-popup>
+          </button>
+          <button
+            class="fluent-btn"
+            (click)="navigateToModule('hng')"
+            [disabled]="true"
+          >
+            <div class="fluent-btn-content">
+              <img
+                src="icons/ic_fluent_data_histogram_20_regular.svg"
+                class="fluent-icon"
+                alt="HNG Icon"
+              />
+              <div class="fluent-btn-title">HNG</div>
+              <div class="fluent-btn-desc">Gestión de datos relacionales</div>
+            </div>
+          </button>
+          <button
+            class="fluent-btn"
+            (click)="navigateToModule('hnv')"
+            [disabled]="true"
+          >
+            <div class="fluent-btn-content">
+              <img
+                src="icons/ic_fluent_database_20_regular.svg"
+                class="fluent-icon"
+                alt="HNV Icon"
+              />
+              <div class="fluent-btn-title">HNV</div>
+              <div class="fluent-btn-desc">Calidad y validación de datos</div>
+            </div>
+          </button>
         </div>
+      </div>
+      <!-- <div class="hawkneo-message"> -->
+      <!--     {{ message }} -->
+      <!-- </div> -->
+
+      <div class="hawkneo-footer-info">
+        <p>&copy; 2025 HAWKneo Project. All rights reserved.</p>
+        <p>Developed by <del>AFM y NUR</del> Cursor.</p>
+      </div>
+
+      <!-- Toasts apilados -->
+      <app-toast-container></app-toast-container>
+
+      <!-- Popup de carga -->
+      <app-loading-popup
+        *ngIf="showLoadingPopup"
+        [message]="loadingMessage"
+      ></app-loading-popup>
     </div>
+  </div>
 </div>

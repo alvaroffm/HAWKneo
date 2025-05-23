@@ -47,6 +47,12 @@ La interfaz de usuario de HAWKneo ha sido diseñada para ofrecer una experiencia
 - Angular CLI (`npm install -g @angular/cli`)
 - Python 3.8+
 
+## Dependencias Principales
+- **Frontend:** Angular 19
+- **Backend:** FastAPI, Uvicorn
+
+
+
 ### Instalación Frontend
 ```bash
 cd frontend
@@ -83,10 +89,6 @@ O manualmente:
 cd frontend
 npx ng serve HAWKneo --open
 ```
-
-## Dependencias Principales
-- **Frontend:** Angular 19
-- **Backend:** FastAPI, Uvicorn
 
 
 ## Licencia
