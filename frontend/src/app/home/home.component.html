@@ -78,4 +78,44 @@
       ></app-loading-popup>
     </div>
   </div>
+
+  <!-- Botones flotantes globales -->
+  <div class="floating-btns">
+    <a
+      class="settings-btn-alt doc-btn"
+      href="#"
+      (click)="toggleDocs($event)"
+      aria-label="Documentación"
+    >
+      <img
+        src="icons/ic_fluent_notebook_20_regular.svg"
+        alt="Documentación"
+        class="settings-icon-alt"
+      />
+    </a>
+    <a
+      class="settings-btn-alt github-btn"
+      href="https://github.com/alvaroffm"
+      target="_blank"
+      rel="noopener"
+      aria-label="GitHub"
+    >
+      <img
+        src="icons/github-mark-white.svg"
+        alt="GitHub"
+        class="settings-icon-alt"
+      />
+    </a>
+    <button
+      class="settings-btn"
+      aria-label="Settings"
+      (click)="toggleSettings()"
+    >
+      <img
+        src="icons/ic_fluent_settings_20_regular.svg"
+        alt="Settings"
+        class="settings-icon"
+      />
+    </button>
+  </div>
 </div>

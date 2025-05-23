@@ -7,86 +7,81 @@ import { LoadingPopupComponent } from '../shared/components/loading-popup/loadin
 import { ToastContainerComponent } from '../shared/components/toast-container/toast-container.component';
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css'],
-    standalone: true,
-    imports: [CommonModule, RouterModule, HttpClientModule, LoadingPopupComponent, ToastContainerComponent]
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterModule,
+    HttpClientModule,
+    LoadingPopupComponent,
+    ToastContainerComponent,
+  ],
 })
 export class HomeComponent implements OnInit {
-    title = 'HAWKneo';
-    message = '';
-    showSettingsMenu = false;
-    showLoadingPopup = false;
-    loadingMessage = 'Cargando configuración...';
+  title = 'HAWKneo';
+  message = '';
+  showSettingsMenu = false;
+  showLoadingPopup = false;
+  loadingMessage = 'Cargando configuración...';
 
-    constructor(
-        private http: HttpClient,
-        private toastService: ToastService,
-        private router: Router
-    ) { }
+  constructor(
+    private http: HttpClient,
+    private toastService: ToastService,
+    private router: Router
+  ) {}
 
-    ngOnInit() {
-        // Removing test toasts on app initialization
-    }
+  ngOnInit() {}
 
-    toggleSettings() {
-        // Show loading popup when settings button is clicked
-        this.showLoadingPopup = true;
-        this.loadingMessage = 'Cargando configuración...';
+  toggleSettings() {
+    this.toastService.showInfo('Este botón todavía no está implementado');
+    this.showSettingsMenu = !this.showSettingsMenu;
+  }
 
-        // Simulate loading data (3 seconds)
-        setTimeout(() => {
-            this.showLoadingPopup = false;
-            this.toastService.showSuccess('Configuración cargada correctamente');
-        }, 3000);
-    }
+  toggleDocs(event: Event) {
+    event.preventDefault();
+    this.toastService.showError(
+      'La documentación no está disponible en este momento'
+    );
+  }
 
-    toggleSettingsMenu() {
-        this.showSettingsMenu = !this.showSettingsMenu;
-    }
+  navigateToModule(module: string) {
+    this.router.navigate([module]);
+  }
 
-    navigateToModule(module: string) {
-        // Navigate to module without showing loading popup
-        this.router.navigate([module]);
-    }
-
-    getRDS() {
-        this.toastService.showSuccess('boton HNS pulsado');
-        this.showLoadingPopup = true;
-        this.loadingMessage = 'Obteniendo datos de HNS...';
-        this.http.get<{ ok: boolean, message: string }>('http://localhost:8000/rds').subscribe({
-            next: res => {
-                this.showLoadingPopup = false;
-                if (res.ok) {
-                    this.message = res.message;
-                    this.showToast(res.message, 'success');
-                } else {
-                    this.message = '';
-                    this.showToast(res.message, 'error');
-                }
-            },
-            error: err => {
-                this.message = '';
-                const backendMsg = err?.error?.message || 'Error al obtener datos de HNS.';
-                this.showLoadingPopup = false;
-                this.showToast(backendMsg, 'error');
-            }
-        });
-    }
-
-    showToast(msg: string, type: 'success' | 'error') {
-        if (type === 'success') {
-            this.toastService.showSuccess(msg);
-        } else {
-            // Update once error method is implemented
-            this.toastService.showSuccess(msg);
-        }
-    }
-
-    getRDR() {
-        this.http.get<{ message: string }>('http://localhost:8000/rdr').subscribe(res => {
+  getRDS() {
+    this.toastService.showSuccess('boton HNS pulsado');
+    this.showLoadingPopup = true;
+    this.loadingMessage = 'Obteniendo datos de HNS...';
+    this.http
+      .get<{ ok: boolean; message: string }>('http://localhost:8000/rds')
+      .subscribe({
+        next: (res) => {
+          this.showLoadingPopup = false;
+          if (res.ok) {
             this.message = res.message;
-        });
-    }
-} 
+            this.toastService.showSuccess(res.message);
+          } else {
+            this.message = '';
+            this.toastService.showError(res.message);
+          }
+        },
+        error: (err) => {
+          this.message = '';
+          const backendMsg =
+            err?.error?.message || 'Error al obtener datos de HNS.';
+          this.showLoadingPopup = false;
+          this.toastService.showError(backendMsg);
+        },
+      });
+  }
+
+  getRDR() {
+    this.http
+      .get<{ message: string }>('http://localhost:8000/rdr')
+      .subscribe((res) => {
+        this.message = res.message;
+      });
+  }
+}
